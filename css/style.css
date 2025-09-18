@@ -1,3 +1,9 @@
+/* Tipografias añadidas */
+@font-face {
+    font-family:'Din bold';
+    src: url(../font/DIN\ Condensed\ Bold.ttf);
+}
+
 /* Estilos generales */
 *{
     padding: 0;
@@ -12,7 +18,12 @@ body {
 
 }
 h1 {
-    font-size: 3em;
+    font-size: 5em;
+    text-transform: uppercase;
+    font-family:'Din bold';
+}
+p {
+    font-size: 1em;
 }
 header {
     padding: 20px;
@@ -54,6 +65,7 @@ header {
 }
 main {
     padding: 20px;
+    min-height: 100vh;
 }
 footer {
     padding: 10px;
@@ -61,11 +73,22 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     color: #fff;
     width: 100%;
     position: sticky;
     bottom: 0;   
     
+    .footer-section {
+        display: inherit;
+        align-items: inherit;
+        gap: 5px;
+
+        svg {
+            fill: #fff ;
+        }
+    }
+
     a{
         color: #fff;
         text-decoration:none ;
@@ -76,6 +99,7 @@ footer {
             
         }
     }
+
 }
 
 @media (max-width: 500px) {
@@ -94,5 +118,11 @@ footer {
     footer {
         height: max-content;
         flex-direction: column;
+    }
+    p {
+    font-size: 0.75em;
+    }
+    li {
+        font-size: 0.75em;
     }
 }
