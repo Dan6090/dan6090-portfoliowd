@@ -1,3 +1,6 @@
+/* Conectar CSS */
+@import "carrusel.css";
+
 /* Tipografias añadidas */
 @font-face {
     font-family:'Din bold';
@@ -7,6 +10,14 @@
     font-family:'Bodoni Negrita';
     src: url(../font/BOD_B.TTF);
 }
+/* Colores */
+:root {
+    /* --titulares: #333; */
+    --titulares: #1d3528;
+    --fondo: #f4f4f4;
+    --presion: #ff9900;
+}
+
 
 /* Estilos generales */
 *{
@@ -14,12 +25,10 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-
+    background-color: var(--fondo);
 }
 h1 {
     font-size: 5em;
@@ -33,13 +42,12 @@ h2 {
     position: relative;
     &::after {
         content: '';
-        background: linear-gradient(to right, #f4f4f4, #000, #f4f4f4);
+        background: linear-gradient(to right, var(--fondo), #000, var(--fondo));
         height: 2px;
         width: 100%;
         position: absolute;
         bottom: 10px;
         left: 0;
-
     }
 }
 p {
@@ -49,13 +57,21 @@ p {
 header {
     padding: 20px;
     height: 134px;
-    background-color: #333;
+    background-color: var(--titulares);
     color: #fff;
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content:space-around;
+
+    div {
+        display: none;
+
+        svg {
+            fill: var(--fondo) ;
+            cursor: pointer;
+        }
+    }
 }
 
 section {
@@ -93,12 +109,12 @@ main {
 }
 footer {
     padding: 10px;
-    background-color: #333;
+    background-color: var(--titulares);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    color: #fff;
+    color: var(--fondo);
     width: 100%;
     position: sticky;
     bottom: 0;   
@@ -109,7 +125,7 @@ footer {
         gap: 5px;
 
         svg {
-            fill: #fff ;
+            fill: var(--fondo) ;
 
             /* &:hover {
                 fill: #ff9900;
@@ -118,7 +134,7 @@ footer {
 
         &:hover > svg {
 
-                fill: #ff9900;
+                fill: var(--presion);
 
         }
     }
@@ -128,7 +144,7 @@ footer {
         text-decoration:none ;
         
         &:hover{
-            color: #ff9900;
+            color: var(--presion);
             text-decoration: underline;
             
         }
@@ -138,8 +154,10 @@ footer {
 
 @media (max-width: 500px) {
     h1 {
-        font-size: 2em;
-        padding-top: 4px;
+        font-size: 2.5em;
+        padding-top: 5px;
+        width: 100%;
+        text-align: center;
     }
     h2 {
         font-size: 2em;
@@ -155,8 +173,15 @@ footer {
         }
     }
     header {
-        height: 50px;
+        height: 60px;
         padding: 0;
+
+        div {
+            width: 19%;
+            display: flex;
+            justify-content: right;
+            padding-right: 10px;
+        }
     }
     footer {
         height: max-content;

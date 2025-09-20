@@ -1,0 +1,107 @@
+.carrusel{
+    width: 100%;
+    overflow-x: auto;
+    margin: 3em auto 1em auto;
+    display: flex;
+    gap: 1em;
+/* Ahora viene uno muy curioso */
+    scroll-behavior: smooth;
+/* Escoger donde estaran los botones es mas complicado de lo que parece y esta es la solución */
+    anchor-name: --carousel;
+/* Ajustar finamente donde se posiciona la imagen */
+    scroll-snap-type: x mandatory;
+/* Para hacer los puntitos */
+    scroll-marker-group: after;
+
+    &::scroll-marker-group {
+        display: flex;
+        justify-content: center;
+        gap: 0.7em;
+    }
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    &::scroll-button(right), &::scroll-button(left) {
+        cursor: pointer;
+        content: '>';
+        font-size: 1.5em;
+        border: 1px solid rgb(194, 194, 194);
+        border-radius: 3px 15px 15px 3px;
+        height: 2.2em;
+        width: 40px;
+        background-color: rgb(235, 241, 202);
+        opacity: 0.7;
+        color: var(--titulares);
+        font-family:'Din bold';
+    /* Aqui empieza lo de escoger la posición */
+        position: fixed;
+        position-anchor: --carousel;
+        position-area: right center;
+        translate: -70%;
+        transition: transform 0.3s ease;
+    }
+    &::scroll-button(right):disabled, &::scroll-button(left):disabled{
+        opacity: 0.3;
+        cursor: auto;
+    }
+    &::scroll-button(left) {
+        content: '<';
+        border-radius: 15px 3px 3px 15px;
+        position-area: left center;
+        translate: 70%;
+    }
+    &::scroll-button(right):enabled:hover, &::scroll-button(left):enabled:hover{
+        transform: scale(1.3);
+    }
+/* Cuando presiona el Raton */
+    &::scroll-button(right):enabled:active, &::scroll-button(left):enabled:active{
+        transform: scale(1.3);
+        color: var(--presion);
+        opacity: 1;
+    }
+}
+
+.card{
+    flex: 0 0 20em;
+    /* height: 12em; Esto puede estar bien pero se recomienda mas lo de abajo*/
+    aspect-ratio: 5 / 3;
+    background-color: var(--titulares);
+    color: var(--fondo);
+    padding: 1em;
+    border-radius: .5em;
+    text-align: center;
+    align-content: center;
+/* Ajustar finamente donde se posiciona la imagen */
+    scroll-snap-align: start;
+
+/* Para hacer los puntitos */
+    /* &::scroll-marker {
+        content: '';
+        height: 1em;
+        width: 1em;
+        background-color: var(--carousel);
+        border-radius: 50%;
+    } */
+    &::scroll-marker {
+        content: '';
+        height: 0.8em;
+        width: 0.8em;
+        background-color: var(--titulares);
+        border-radius: 50%;
+        transition: 0.2s ease;
+    }
+    &::scroll-marker:target-current {
+    background-color: green;
+    transform: scale(1.5);
+    }
+
+}
+
+/* PASAMOS AL MODO RESPONSIVE */
+
+@media (max-width: 500px) {
+    .card {
+        flex: 0 0 100%;
+    }
+}
