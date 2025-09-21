@@ -18,7 +18,6 @@
         justify-content: center;
         gap: 0.7em;
     }
-
     &::-webkit-scrollbar{
         display: none;
     }
@@ -76,8 +75,6 @@
 /* Ajustar finamente donde se posiciona la imagen */
     scroll-snap-align: start;
     position: relative;
-
-
 /* Para hacer los puntitos */
     &::scroll-marker {
         content: '';
@@ -91,7 +88,6 @@
     background-color: green;
     transform: scale(1.5);
     }
-
     img {
         width: 100%;
         height: 100%;

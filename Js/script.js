@@ -6,7 +6,8 @@ const indice = document.getElementById('indice')
 burg.addEventListener('click', ()=> {
     burg.classList = ('offburg');
     cierre.classList = ('');
-    indice.style.display = 'flex';
+    // indice.style.display = 'flex';
+    indice.style.transform = 'translateY(0%)';
 
 
 })
@@ -14,5 +15,5 @@ burg.addEventListener('click', ()=> {
 cierre.addEventListener('click', ()=> {
     cierre.classList = ('offcierre');
     burg.classList = ('');
-    indice.style.display = 'none';
+    indice.style.transform = 'translateY(-100%)';
 })
