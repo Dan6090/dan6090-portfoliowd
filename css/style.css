@@ -151,12 +151,6 @@ footer {
 }
 
 @media (max-width: 500px) {
-    h1 {
-        font-size: 2.5em;
-        padding-top: 5px;
-        width: 100%;
-        text-align: center;
-    }
     h2 {
         font-size: 2em;
     }
@@ -170,21 +164,10 @@ footer {
             }
         }
     }
-    header {
-        height: 60px;
-        padding: 0;
-
-        > div {
-            width: 19%;
-            display: flex;
-            justify-content: right;
-            align-items: center;
-            padding-right: 10px;
-        }
-    }
     footer {
         height: max-content;
         flex-direction: column;
+        z-index: 3;
     }
     p {
     font-size: 0.75em;

@@ -40,6 +40,7 @@
         position-area: right center;
         translate: -70%;
         transition: transform 0.3s ease;
+        z-index: 2;
     }
     &::scroll-button(right):disabled, &::scroll-button(left):disabled{
         opacity: 0.3;
@@ -63,26 +64,21 @@
 }
 
 .card{
-    flex: 0 0 25em;
-    /* height: 12em; Esto puede estar bien pero se recomienda mas lo de abajo*/
+    flex: 0 0 24em;
     aspect-ratio: 5 / 3;
     background-color: var(--titulares);
     color: var(--fondo);
-    /* padding: 1em; */
     border-radius: .5em;
+    /* Esto permite que el border-radius se aplique al contenido interno*/
+    overflow: hidden;
     text-align: center;
     align-content: center;
 /* Ajustar finamente donde se posiciona la imagen */
     scroll-snap-align: start;
+    position: relative;
+
 
 /* Para hacer los puntitos */
-    /* &::scroll-marker {
-        content: '';
-        height: 1em;
-        width: 1em;
-        background-color: var(--carousel);
-        border-radius: 50%;
-    } */
     &::scroll-marker {
         content: '';
         height: 0.8em;
@@ -94,6 +90,23 @@
     &::scroll-marker:target-current {
     background-color: green;
     transform: scale(1.5);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 0 0;
+        filter: brightness(0.5);
+    }
+    h3 {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        width: 100%;
+        /* height: 100%; */
+        margin-top: 27%;
+        
     }
 }
 
