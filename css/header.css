@@ -1,0 +1,50 @@
+h1 {
+    font-size: 5em;
+    text-transform: uppercase;
+    font-family:'Din bold';
+    padding-top: 6px;
+
+    strong {
+        font-size: 1.2em;
+    }
+}
+header {
+    padding: 20px;
+    height: 134px;
+    background-color: var(--titulares);
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+
+    div {
+        display: none;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+
+        svg {
+            fill: var(--fondo) ;
+            cursor: pointer;
+            padding: 4px;
+            transition: transform 0.5s ease;
+            overflow: hidden;
+            position: absolute;
+
+            &:active {
+                fill: var(--presion);
+            }
+        }
+        .offburg {
+            fill: #ff9900;
+            /* display: none; */
+            transform: translateX(120%);
+
+        }
+        .offcierre{
+            /* display: none; */
+            transform: translateY(-120%);
+        }
+    }
+}

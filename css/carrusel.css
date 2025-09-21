@@ -63,12 +63,12 @@
 }
 
 .card{
-    flex: 0 0 20em;
+    flex: 0 0 25em;
     /* height: 12em; Esto puede estar bien pero se recomienda mas lo de abajo*/
     aspect-ratio: 5 / 3;
     background-color: var(--titulares);
     color: var(--fondo);
-    padding: 1em;
+    /* padding: 1em; */
     border-radius: .5em;
     text-align: center;
     align-content: center;
@@ -95,7 +95,6 @@
     background-color: green;
     transform: scale(1.5);
     }
-
 }
 
 /* PASAMOS AL MODO RESPONSIVE */
