@@ -68,6 +68,7 @@
     background-color: var(--titulares);
     color: var(--fondo);
     border-radius: .5em;
+    cursor: pointer;
     /* Esto permite que el border-radius se aplique al contenido interno*/
     overflow: hidden;
     text-align: center;
@@ -103,6 +104,19 @@
         /* height: 100%; */
         margin-top: 27%;
         
+    }
+}
+
+dialog {
+    width: 50%;
+    border: none;
+    inset-inline-start: 25%;
+
+
+    img {
+        width: 100%;
+        /* height: 100%; */
+        object-fit: contain;
     }
 }
 

@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <dialog id="webs-dialog">
+        <div class="wrapper">
+            <img src="" alt="">
+            <!-- <p>Proyecto genérico de web de cafetería. No representa ninguna empresa real, pero cuenta con todas sus propiedades profesionales</p> -->
+        </div>
+    </dialog>
     <header>
         <div></div>
         <h1><strong>D</strong>an García</h1>
@@ -61,11 +67,14 @@
         </section>
 <!-- Carrusel de imagenes web -->
         <div class="carrusel">
-            <div class="card">
+            <div class="card" onclick=mostrarDialog()>
                 <h3>Web de Cafeteria</h3>
-                 <img src="img/coffecopantallazo.jpg" alt="">
+                <img src="img/coffecopantallazo.jpg" alt="Coffe and co">
             </div>
-            <div class="card"><h3>Web de Gimnasio</h3></div>
+            <div class="card" onclick=mostrarDialog()>
+                <h3>Web de Gimnasio</h3>
+                <img src="img/gimnasio.jpg" alt="Gymi Jymi">
+            </div>
             <div class="card"><h3>Web de Escuela de Baile</h3></div>
             <div class="card"><h3>Web de Portal de Videojuegos</h3></div>
             <div class="card"><h3>Web de Asociacion de Rol</h3></div>
