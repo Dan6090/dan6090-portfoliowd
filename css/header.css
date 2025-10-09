@@ -11,6 +11,8 @@ h1 {
 header {
     padding: 20px;
     height: 134px;
+    /* height: 23vh; El tamaño base en mi ordenador */
+    /* height: 15.3vh; El tamaño base de autenticos 134px */
     background-color: var(--titulares);
     color: #fff;
     text-align: center;
